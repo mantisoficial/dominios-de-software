@@ -3,6 +3,8 @@
     border-radius: 8px;
     padding: 8px;
     background-color: antiquewhite;
+    margin-right: 16px;
+    width: 200px;
 }
 
 .item-content-header {
@@ -13,10 +15,11 @@
 
 .item-content-body {
     text-align: left;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 }
 
 .item-content-footer {
-    text-align: right;
+    margin: auto 0px auto auto;
+    display: flex;
 }
 
