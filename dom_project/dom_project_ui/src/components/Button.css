@@ -1,0 +1,33 @@
+.button {
+  border: none;
+  border-radius: 6px;
+  height: 32px;
+  width: 72px;
+  cursor: pointer;
+}
+
+.destructive {
+  background-color: red;
+  opacity: 0.7;
+}
+
+.destructive {
+  opacity: 0.85;
+}
+
+.destructive {
+  opacity: 1;
+}
+
+.standard {
+  background-color: greenyellow;
+  opacity: 0.5;
+}
+
+.standard {
+  opacity: 0.75;
+}
+
+.standard {
+  opacity: 1;
+}
