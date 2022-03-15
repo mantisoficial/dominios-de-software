@@ -46,6 +46,7 @@ function App() {
           <Dialog
             isOpen={isModalOpen}
             onCancel={toggleModal}
+            onSave={toggleModal}
             existingQuestions={questions}
           />
         ) : null}
