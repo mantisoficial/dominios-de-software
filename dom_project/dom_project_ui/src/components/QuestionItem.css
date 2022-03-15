@@ -1,0 +1,22 @@
+.item-container {
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: antiquewhite;
+}
+
+.item-content-header {
+    display: flex;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.item-content-body {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.item-content-footer {
+    text-align: right;
+}
+
