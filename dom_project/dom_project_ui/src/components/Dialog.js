@@ -7,9 +7,10 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
   //#region UseState and Variables
   const [newQuestion, setNewQuestion] = useState({
     code: "",
+    name: "",
     question: "",
     subject: "Matemática",
-    subjectType: "Exacts",
+    subjectType: "Exact",
     reviewed: false,
   });
 
@@ -33,7 +34,6 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
   //#endregion
 
   //#region Handles
-
   const handleInputChange = (e) => {
     setNewQuestion({ ...newQuestion, [e.target.name]: e.target.value });
   };
@@ -49,14 +49,14 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
       setNewQuestion({
         ...newQuestion,
         subject: e.target.value,
-        subjectType: "Humans",
+        subjectType: "Human",
       });
     } else {
       if (e.target.value === "Física" || e.target.value === "Matemática") {
         setNewQuestion({
           ...newQuestion,
           subject: e.target.value,
-          subjectType: "Exacts",
+          subjectType: "Exact",
         });
       }
     }
@@ -78,6 +78,7 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
 
   const handleSubmit = (state) => {
     existingQuestions.push(state);
+    onSave();
   };
   //#endregion
 
@@ -100,6 +101,20 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
               value={newQuestion.code}
               inputStyle={{ width: "40px" }}
               inputLength={4}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="input-row">
+            <div style={{ margin: "auto 0px" }}>
+              <p className="body" style={{ margin: "0px 16px 0px 0px" }}>
+                {" "}
+                nome:{" "}
+              </p>
+            </div>
+            <InputField
+              name="name"
+              value={newQuestion.name}
+              inputStyle={{ width: "200px" }}
               onChange={handleInputChange}
             />
           </div>
@@ -166,7 +181,7 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
             label="Salvar"
             onClick={() => {
               handleValidation();
-              if (isValid) handleSubmit();
+              if (isValid) handleSubmit(newQuestion);
             }}
             buttonMargin={"0px 8px 0px 0px"}
           />
