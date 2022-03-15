@@ -9,8 +9,16 @@ function App() {
       code: 2605,
       name: "Teste",
       question: "Qual o nome do stone?",
-      subquestions: [],
+      subquestions: [
+        {
+          text: "a) Subitem 1",
+        },
+        {
+          text: "b) Subitem 2",
+        },
+      ],
       subject: "História",
+      subjectType: "Human",
       reviewed: true,
     },
     {
@@ -19,6 +27,7 @@ function App() {
       question: "Qual a idade do stone?",
       subquestions: [],
       subject: "Matemática",
+      subjectType: "Exact",
       reviewed: false,
     },
   ]);
