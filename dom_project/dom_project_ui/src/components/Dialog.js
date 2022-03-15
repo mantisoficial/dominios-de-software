@@ -1,34 +1,85 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Dialog.css";
 import Button from "./Button";
+import InputField from "./InputField";
 
-const Dialog = ({
-  name,
-  isOpen,
-  placeholder,
-  value,
-  onChange,
-  onCancel,
-  onSave,
-}) => {
+const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
+  //#region UseState and Variables
+  const [newQuestion, setNewQuestion] = useState({
+    code: "",
+    question: "",
+    subject: "Matemática",
+    subjectType: "Exacts",
+    reviewed: false,
+  });
+
+  const [isValid, setIsValid] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const subjectOptions = [
     {
       name: "Matemática",
-      value: "A",
     },
     {
       name: "História",
-      value: "B",
     },
     {
       name: "Física",
-      value: "C",
     },
     {
       name: "Geografia",
-      value: "D",
     },
   ];
+  //#endregion
+
+  //#region Handles
+
+  const handleInputChange = (e) => {
+    setNewQuestion({ ...newQuestion, [e.target.name]: e.target.value });
+  };
+
+  const handleCheckboxChange = () => {
+    if (newQuestion.reviewed === false)
+      setNewQuestion({ ...newQuestion, reviewed: true });
+    else setNewQuestion({ ...newQuestion, reviewed: false });
+  };
+
+  const handleComboBoxChange = (e) => {
+    if (e.target.value === "Geografia" || e.target.value === "História") {
+      setNewQuestion({
+        ...newQuestion,
+        subject: e.target.value,
+        subjectType: "Humans",
+      });
+    } else {
+      if (e.target.value === "Física" || e.target.value === "Matemática") {
+        setNewQuestion({
+          ...newQuestion,
+          subject: e.target.value,
+          subjectType: "Exacts",
+        });
+      }
+    }
+  };
+
+  const handleValidation = () => {
+    existingQuestions.map((item) => {
+      if (newQuestion.question === item.question) {
+        setIsValid(false);
+        setErrorMessage("Questões iguais não são permitidas");
+      } else setIsValid(true);
+    });
+
+    if (!newQuestion.code || !newQuestion.question) {
+      setIsValid(false);
+      setErrorMessage("Preencha o formulário corretamente");
+    } else setIsValid(true);
+  };
+
+  const handleSubmit = (state) => {
+    existingQuestions.push(state);
+  };
+  //#endregion
 
   return isOpen ? (
     <div className="dialog-popup">
@@ -44,17 +95,13 @@ const Dialog = ({
                 Código:{" "}
               </p>
             </div>
-            <input
-              name={name}
-              className="text-input"
-              type="text"
-              placeholder={placeholder ?? null}
-              onChange={onChange}
-              value={value}
-              autoComplete="off"
-              maxLength={4}
-              style={{ width: "40px" }}
-            ></input>
+            <InputField
+              name="code"
+              value={newQuestion.code}
+              inputStyle={{ width: "40px" }}
+              inputLength={4}
+              onChange={handleInputChange}
+            />
           </div>
           <div className="input-row" style={{ display: "block" }}>
             <div style={{ margin: "auto 0px" }}>
@@ -63,16 +110,13 @@ const Dialog = ({
                 Questão:{" "}
               </p>
             </div>
-            <input
-              name={name}
-              className="text-input"
-              type="text"
-              placeholder={placeholder ?? null}
-              onChange={onChange}
-              value={value}
-              autoComplete="off"
-              style={{ width: "250px", height: "30px" }}
-            ></input>
+            <InputField
+              inputStyle={{ width: "250px", heigth: "30px" }}
+              placeholder="Preencha o campo"
+              name="question"
+              value={newQuestion.question}
+              onChange={handleInputChange}
+            />
           </div>
           <div className="input-row">
             <div style={{ margin: "auto 0px" }}>
@@ -82,14 +126,17 @@ const Dialog = ({
               </p>
             </div>
             <select
-              name={name}
+              name="subject"
               className="text-input"
-              placeholder={placeholder ?? null}
-              onChange={onChange}
-              value={value}
+              onChange={handleComboBoxChange}
+              value={newQuestion.subject}
             >
               {subjectOptions.map((item, index) => {
-                return <option value={item.value}>{item.name}</option>;
+                return (
+                  <option key={index} value={item.name}>
+                    {item.name}
+                  </option>
+                );
               })}
             </select>
           </div>
@@ -101,18 +148,26 @@ const Dialog = ({
               </p>
             </div>
             <input
-              name={name}
+              name="reviewed"
               className="text-input"
               type="checkbox"
-              onChange={onChange}
-              value={value}
+              onChange={handleCheckboxChange}
+              value={newQuestion.reviewed}
             ></input>
           </div>
+        </div>
+        <div className="dialog-error">
+          <p className="body" style={{ color: "red" }}>
+            {errorMessage}
+          </p>
         </div>
         <div className="dialog-footer">
           <Button
             label="Salvar"
-            onClick={onSave}
+            onClick={() => {
+              handleValidation();
+              if (isValid) handleSubmit();
+            }}
             buttonMargin={"0px 8px 0px 0px"}
           />
           <Button label="Cancelar" isDestructive onClick={onCancel} />
