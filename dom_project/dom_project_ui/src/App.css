@@ -11,4 +11,9 @@
 
 .action-buttons {
   display: flex;
+  margin-bottom: 24px;
+}
+
+.questions-list {
+  display: flex;
 }
