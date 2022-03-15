@@ -2,6 +2,7 @@ import "./App.css";
 import Button from "./components/Button";
 import React, { useState } from "react";
 import QuestionItem from "./components/QuestionItem";
+import Dialog from "./components/Dialog";
 
 function App() {
   const [questions, setQuestions] = useState([
@@ -34,6 +35,12 @@ function App() {
   //properties
   //code, name, question, subquestion (optional), subject, reviewed
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((previous) => !previous);
+  };
+
   return (
     <div className="app">
       <header className="app-header">
@@ -43,7 +50,8 @@ function App() {
       </header>
       <div className="action-buttons">
         <Button label="Excluir" isDestructive buttonMargin="0px 16px 0px 0px" />
-        <Button label="Adicionar" />
+        <Button label="Adicionar" onClick={toggleModal} />
+        <Dialog isOpen={isModalOpen} />
       </div>
       <div className="questions-list">
         {questions.map((item, index) => {
