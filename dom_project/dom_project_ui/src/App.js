@@ -24,8 +24,7 @@ function App() {
     },
   ]);
 
-  //properties
-  //code, name, question, subquestion (optional), subject, reviewed
+  //TODO Fazer setQuestions após salvar
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
