@@ -1,0 +1,12 @@
+.badge-container {
+    padding: 0px 4px;
+    border: none;
+    border-radius: 4px;
+    height: 24px;
+    display: flex;
+}
+
+.badge-content {
+    margin: auto 0px;
+    display: flex;
+}
