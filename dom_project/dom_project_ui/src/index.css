@@ -22,6 +22,12 @@ code {
   margin: 0px;
 }
 
+.headline {
+  font-size: 13px;
+  margin: 0px;
+  text-transform: uppercase;
+}
+
 .body {
   font-size: 13px;
   margin: 0px;
