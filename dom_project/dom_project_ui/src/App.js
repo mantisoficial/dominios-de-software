@@ -4,6 +4,12 @@ import React, { useState } from "react";
 import QuestionItem from "./components/QuestionItem";
 import Dialog from "./components/Dialog";
 
+
+// LEMBRETES:
+// A gente precisa de uma tela de cadastro e de login.
+// Para o cadastro, cada professor vai precisar de CPF, Nome, E-mail, Senha, Cargo e na hora de logar vai preicsar do E-mail e da Senha.
+// Deve ter uma tela também para o professor pesquisar por questões.
+
 function App() {
   const [questions, setQuestions] = useState([
     {
@@ -23,6 +29,24 @@ function App() {
       reviewed: false,
     },
   ]);
+
+  // Cada questão será objetiva com 5 alternativas, sendo só uma correta. Vou colocar um exemplo meia boca aqui só para ilustrar:
+  // {
+  //  code: 2812,
+  //  name: "Teste 2",
+  //  question: "Qual a idade do stone?",
+  //  option1: "12",
+  //  option2: "13",
+  //  option3: "20",
+  //  option4: "21",
+  //  option5: "28",
+  //  answer: "21",
+  //  subject: "Matemática",
+  //  subjectType: "Exact",
+  //  reviewed: false,
+  // }
+  //
+  // 
 
   //TODO Fazer setQuestions após salvar
 
