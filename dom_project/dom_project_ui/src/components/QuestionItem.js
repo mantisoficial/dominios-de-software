@@ -18,15 +18,6 @@ const QuestionItem = ({ item }) => {
         <p className="body" style={{ margin: "0px 0px 8px 0px" }}>
           {item.question}
         </p>
-        {item.subquestions.length > 0
-          ? item.subquestions.map((item, index) => {
-              return (
-                <div key={index} style={{ margin: "0px 0px 8px 0px" }}>
-                  <p className="metadata">{item.text}</p>
-                </div>
-              );
-            })
-          : null}
       </div>
       <div className="item-content-footer">
         <div style={{ margin: "auto 0px" }}>
