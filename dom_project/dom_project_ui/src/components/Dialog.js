@@ -78,7 +78,7 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
       setErrorMessage("Preencha o formulário corretamente");
       return isValid;
     }
-    
+
     return isValid;
   };
 
@@ -107,6 +107,7 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
               value={newQuestion.code}
               inputStyle={{ width: "40px" }}
               inputLength={4}
+              placeholder="Cód"
               onChange={handleInputChange}
             />
           </div>
@@ -120,6 +121,7 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
             <InputField
               name="name"
               value={newQuestion.name}
+              placeholder="Preencha o campo"
               inputStyle={{ width: "200px" }}
               onChange={handleInputChange}
             />
