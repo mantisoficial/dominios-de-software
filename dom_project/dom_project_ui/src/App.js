@@ -24,9 +24,12 @@ function App() {
     },
   ]);
 
-  //TODO Fazer setQuestions após salvar
-
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const onAddedQuestion = (value) => {
+    setQuestions((previous) => [...previous, value]);
+    setIsModalOpen(false);
+  };
 
   const toggleModal = () => {
     setIsModalOpen((previous) => !previous);
