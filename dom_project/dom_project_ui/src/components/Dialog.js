@@ -14,7 +14,6 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
     reviewed: false,
   });
 
-  const [isValid, setIsValid] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
   const subjectOptions = [
@@ -63,17 +62,24 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
   };
 
   const handleValidation = () => {
+    var isValid = true;
+
     existingQuestions.map((item) => {
       if (newQuestion.question === item.question) {
-        setIsValid(false);
+        isValid = false;
         setErrorMessage("Questões iguais não são permitidas");
-      } else setIsValid(true);
+        return isValid;
+      }
+      return isValid;
     });
 
     if (!newQuestion.code || !newQuestion.question) {
-      setIsValid(false);
+      isValid = false;
       setErrorMessage("Preencha o formulário corretamente");
-    } else setIsValid(true);
+      return isValid;
+    }
+    
+    return isValid;
   };
 
   const handleSubmit = (state) => {
@@ -180,8 +186,7 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
           <Button
             label="Salvar"
             onClick={() => {
-              handleValidation();
-              if (isValid) handleSubmit(newQuestion);
+              if (handleValidation()) handleSubmit(newQuestion);
             }}
             buttonMargin={"0px 8px 0px 0px"}
           />
