@@ -1,0 +1,25 @@
+.login-container {
+  background-color: #282c34;
+  width: 1900px;
+  height: 880px;
+}
+
+.login-inputs {
+  top: 35%;
+  left: 45%;
+  position: absolute;
+}
+
+.login-username {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.login-password {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.login-actions {
+    display: flex;
+}
