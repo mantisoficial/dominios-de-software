@@ -24,6 +24,7 @@ namespace DomProject_WebApi.Repository.Sql
 
         public DbSet<Question> Questions { get; set; }
         public DbSet<AnswerValue> AnswerValues { get; set; }
+        public DbSet<User> Users { get; set; }
 
     }
 }

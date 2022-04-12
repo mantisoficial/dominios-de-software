@@ -14,6 +14,9 @@ namespace DomProject_WebApi
 
             CreateMap<AnswerValueViewModel, AnswerValue>();
             CreateMap<AnswerValue, AnswerValueViewModel>();
+
+            CreateMap<UserViewModel, User>();
+            CreateMap<User, UserViewModel>();
         }
     }
 }
