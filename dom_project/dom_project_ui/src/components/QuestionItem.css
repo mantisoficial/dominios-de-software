@@ -18,6 +18,11 @@
     margin-bottom: 8px;
 }
 
+.item-answers-list {
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
 .item-content-footer {
     margin: auto 0px auto auto;
     display: flex;
