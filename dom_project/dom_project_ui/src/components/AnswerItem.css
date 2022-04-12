@@ -1,0 +1,8 @@
+.answer-item-container {
+    width: 100%;
+    background-color: transparent;
+}
+
+.answer-item-content {
+    display: flex;
+}
