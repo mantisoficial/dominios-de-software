@@ -3,14 +3,13 @@ import Button from "../components/Button";
 import React, { useState, useEffect } from "react";
 import QuestionItem from "../components/QuestionItem";
 import Dialog from "../components/Dialog";
+import { useNavigate } from "react-router-dom";
 import Service from "../api/Service";
-// LEMBRETES:
-// A gente precisa de uma tela de cadastro e de login.
-// Para o cadastro, cada professor vai precisar de CPF, Nome, E-mail, Senha, Cargo e na hora de logar vai preicsar do E-mail e da Senha.
-// Deve ter uma tela também para o professor pesquisar por questões.
 
 function App() {
   const [questions, setQuestions] = useState([]);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Cada questão será objetiva com 5 alternativas, sendo só uma correta. Vou colocar um exemplo meia boca aqui só para ilustrar:
   // {
@@ -28,7 +27,8 @@ function App() {
   //  reviewed: false,
   // }
   //
-  // 
+  //
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getQuestions = async () => {
@@ -39,7 +39,9 @@ function App() {
     getQuestions();
   }, []);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleLogout = () => {
+    navigate("/")
+  };
 
   const onAddedQuestion = (value) => {
     setQuestions((previous) => [...previous, value]);
@@ -59,6 +61,8 @@ function App() {
       </header>
       <div className="action-buttons">
         <Button label="Adicionar" onClick={toggleModal} />
+        <div style={{margin: "0px 0px 0px 8px"}}/>
+        <Button label="Sair" onClick={handleLogout} isDestructive/>
         {isModalOpen ? (
           <Dialog
             isOpen={isModalOpen}
