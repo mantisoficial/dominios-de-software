@@ -1,16 +1,31 @@
 .register-container {
   background-color: #282c34;
-  width: 1900px;
-  height: 880px;
+  width: 1920px;
+  height: 937px;
 }
 
 .register-inputs {
-  top: 35%;
+  top: 30%;
   left: 45%;
   position: absolute;
+  background-color: white;
+  border-radius: 4px;
+  padding: 12px;
 }
 
 .register-input-row {
   display: flex;
+  width: 100%;
   margin-bottom: 24px;
+}
+
+.input-name {
+  margin: auto 0px;
+  width: 40%;
+}
+
+.register-actions {
+    display: flex;
+    width: 100%;
+    margin: auto 0px auto auto;
 }
