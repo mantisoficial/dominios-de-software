@@ -23,7 +23,6 @@ const RegisterPage = () => {
     const getUsers = async () => {
       await Service.get("users", (_, data) => {
         setUsers(data);
-        console.log(data);
       });
     };
     getUsers();
@@ -37,6 +36,7 @@ const RegisterPage = () => {
     navigate("/");
   };
 
+  //TODO - Validar EMAIL
   const handleRegisterValidation = () => {
     var isValid = true;
 
