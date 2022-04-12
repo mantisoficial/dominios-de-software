@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace DomProject_WebApi.Controllers
 {
     [ApiController]
-    [EnableCors("PortfolioPolicy")]
+    [EnableCors("DomProjectPolicy")]
     [Route("api/v1/[controller]")]
     public class QuestionsController : Controller
     {
