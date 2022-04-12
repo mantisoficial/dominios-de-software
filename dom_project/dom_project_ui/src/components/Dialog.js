@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Dialog.css";
 import Button from "./Button";
 import InputField from "./InputField";
-
-const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
+import Service from "../api/Service";
+const Dialog = ({ isOpen, onCancel, onSuccessCallback, existingQuestions }) => {
   //#region UseState and Variables
   const [newQuestion, setNewQuestion] = useState({
     code: "",
@@ -11,7 +11,6 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
     question: "",
     subject: "Matemática",
     subjectType: "Exact",
-    reviewed: false,
   });
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -82,9 +81,18 @@ const Dialog = ({ isOpen, onCancel, onSave, existingQuestions }) => {
     return isValid;
   };
 
+  const postQuestion = async (json) => {
+    await Service.post("questions", json, (code, data) => {
+      if (code === 200) {
+        let value = newQuestion;
+        value.id = data.id;
+        onSuccessCallback(value);
+      }
+    });
+  };
+
   const handleSubmit = (state) => {
-    existingQuestions.push(state);
-    onSave();
+    postQuestion(state);
   };
   //#endregion
 
