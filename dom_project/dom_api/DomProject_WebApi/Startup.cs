@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using DomProject_WebApi.Repository;
 using DomProject_WebApi.Models;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
 
 namespace DomProject_WebApi
 {
@@ -44,6 +45,14 @@ namespace DomProject_WebApi
             });
 
             services.AddScoped<IRepository<Question>, BaseRepository<Question, DomProjectContext>>();
+
+            MapperConfiguration mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
 
             services.AddCors(o => o.AddPolicy("DomProjectPolicy", builder =>
             {
