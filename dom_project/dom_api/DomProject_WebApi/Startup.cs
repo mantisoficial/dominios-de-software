@@ -44,7 +44,7 @@ namespace DomProject_WebApi
                 }
             });
 
-            services.AddScoped<IRepository<Question>, BaseRepository<Question, DomProjectContext>>();
+            services.AddScoped<IRepository<Question>, SqlQuestionRepository>();
 
             MapperConfiguration mapperConfig = new MapperConfiguration(mc =>
             {
