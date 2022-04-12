@@ -1,7 +1,7 @@
 .login-container {
   background-color: #282c34;
-  width: 1900px;
-  height: 880px;
+  width: 1920px;
+  height: 937px;
 }
 
 .login-inputs {
@@ -12,14 +12,16 @@
 
 .login-username {
   display: flex;
+  width: 100%;
   margin-bottom: 24px;
 }
 
 .login-password {
   display: flex;
+  width: 100%;
   margin-bottom: 24px;
 }
 
 .login-actions {
-    display: flex;
+  display: flex;
 }
