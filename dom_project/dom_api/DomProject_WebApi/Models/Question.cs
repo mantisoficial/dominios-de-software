@@ -15,5 +15,6 @@ namespace DomProject_WebApi.Models
     {
         Stem = 0,
         HumanSciences = 1,
+        Biologics = 2,
     }
 }

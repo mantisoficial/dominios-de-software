@@ -16,6 +16,7 @@ namespace DomProject_WebApi.Dtos
     {
         Stem = 0,
         HumanSciences = 1,
+        Biologics = 2,
     }
 }
 
