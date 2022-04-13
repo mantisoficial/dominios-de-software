@@ -40,7 +40,7 @@ function App() {
   }, []);
 
   const handleLogout = () => {
-    navigate("/")
+    navigate("/");
   };
 
   const onAddedQuestion = (value) => {
@@ -61,8 +61,8 @@ function App() {
       </header>
       <div className="action-buttons">
         <Button label="Adicionar" onClick={toggleModal} />
-        <div style={{margin: "0px 0px 0px 8px"}}/>
-        <Button label="Sair" onClick={handleLogout} isDestructive/>
+        <div style={{ margin: "0px 0px 0px 8px" }} />
+        <Button label="Sair" onClick={handleLogout} isDestructive />
         {isModalOpen ? (
           <Dialog
             isOpen={isModalOpen}
@@ -74,11 +74,7 @@ function App() {
       </div>
       <div className="questions-list">
         {questions.map((item, index) => {
-          return (
-            <div key={index}>
-              <QuestionItem item={item} />
-            </div>
-          );
+          return <QuestionItem key={index} item={item} />;
         })}
       </div>
     </div>

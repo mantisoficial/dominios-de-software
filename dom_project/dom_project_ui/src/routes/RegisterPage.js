@@ -35,8 +35,7 @@ const RegisterPage = () => {
   const handleRegisterCancel = () => {
     navigate("/");
   };
-
-  //TODO - Validar EMAIL
+  
   const handleRegisterValidation = () => {
     var isValid = true;
 
@@ -73,7 +72,7 @@ const RegisterPage = () => {
       if (code === 200) {
         let value = newUser;
         value.id = data.id;
-        navigate("/app");
+        navigate("/");
       }
     });
   };
