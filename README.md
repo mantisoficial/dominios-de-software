@@ -10,6 +10,10 @@ O Identificador Único de Questões deve ser capaz de receber e armazenar quest�
 Preparamos o seguinte passo-a-passo para você seguir se quiser testar o o sistema em sua própria máquina.
 
 ### 1º Passo
+Primeiramente é preciso fazer o download das seguintes ferramentas: 
+- Visual Studio Code - https://code.visualstudio.com/download
+- Visual Studio Community - https://visualstudio.microsoft.com/pt-br/vs/community/
+- SQL Server Management Studio - https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
 
 
 ## Banco de dados - TODO
