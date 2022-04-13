@@ -11,23 +11,6 @@ function App() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Cada questão será objetiva com 5 alternativas, sendo só uma correta. Vou colocar um exemplo meia boca aqui só para ilustrar:
-  // {
-  //  code: 2812,
-  //  name: "Teste 2",
-  //  question: "Qual a idade do stone?",
-  //  option1: "12",
-  //  option2: "13",
-  //  option3: "20",
-  //  option4: "21",
-  //  option5: "28",
-  //  answer: "21",
-  //  subject: "Matemática",
-  //  subjectType: "Exact",
-  //  reviewed: false,
-  // }
-  //
-  //
   const navigate = useNavigate();
 
   useEffect(() => {
