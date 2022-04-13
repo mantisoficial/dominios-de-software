@@ -9,7 +9,7 @@ O Identificador Único de Questões deve ser capaz de receber e armazenar quest�
 ## Como testar na sua máquina
 Preparamos o seguinte passo-a-passo para você seguir se quiser testar o o sistema em sua própria máquina.
 
-# 1º Passo
+### 1º Passo
 
 
 ## Banco de dados - TODO
