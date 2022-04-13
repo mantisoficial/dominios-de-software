@@ -5,4 +5,10 @@
 
 .answer-item-content {
     display: flex;
+    height: 32px;
+    margin: auto 0px;
+}
+
+.isCorrect {
+    background-color: rgba(0, 255, 0, 0.15);
 }

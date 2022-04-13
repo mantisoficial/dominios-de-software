@@ -8,7 +8,7 @@ const AnswerItem = ({ item, counter }) => {
         className={`answer-item-content ${item.isCorrect ? "isCorrect" : ""}`}
       >
         <p className="body" style={{ margin: "0px 8px 0px 0px" }}>
-          {counter}
+          {counter})
         </p>
         <p className="body" style={{ margin: "0px" }}>
           {item.text}
