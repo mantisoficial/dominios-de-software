@@ -1,4 +1,5 @@
 import React from "react";
+import AnswerItem from "./AnswerItem";
 import "./QuestionItem.css";
 import SubjectBadge from "./SubjectBadge";
 
@@ -22,7 +23,16 @@ const QuestionItem = ({ item }) => {
         </div>
         <div className="item-answers-list">
           <div className="answers-list-header">
-            <p className="body-medium">Respostas:</p>
+            <p className="body-medium">Opções:</p>
+            {item.answerValues.map((answerItem, index) => {
+              return (
+                <AnswerItem
+                  index={index}
+                  item={answerItem}
+                  counter={index + 1}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
@@ -34,7 +44,9 @@ const QuestionItem = ({ item }) => {
         </div>
         <SubjectBadge
           isExactScience={item.subject === 0 ? true : false}
-          label={item.subject === 0 ? "Exatas" : "Humanas"}
+          label={
+            item.subject === 0 ? "Exatas" : "Humanas" ? "Biológicas" : "null"
+          }
         />
       </div>
     </div>
