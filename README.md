@@ -17,6 +17,7 @@ Primeiramente é preciso fazer o download das seguintes ferramentas:
 ![pass1-img](https://user-images.githubusercontent.com/54213043/163079739-8f6a4539-8741-42e8-ae71-da3942d21970.jpg)
 
 - SQL Server Management Studio - https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
+- SQL Server Express (se necessário) - https://www.microsoft.com/pt-br/sql-server/sql-server-downloads
 
 ### 2º Passo
 Criar um banco de dados local. Para isso abra o SQL Server Management Studio, coloque o nome do seu servidor e clique em conectar como mostra a imagem abaixo.
