@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AnswerItem from "./AnswerItem";
 import "./QuestionItem.css";
 import SubjectBadge from "./SubjectBadge";
 
 const QuestionItem = ({ item }) => {
+  const [label, setLabel] = useState("");
+
+  useEffect(() => {
+    const defineLabel = () => {
+      if (item.subject === 1) setLabel("Exatas");
+      else if (item.subject === 2) setLabel("Humanas");
+      else if (item.subject === 3) setLabel("Biológicas");
+    };
+    defineLabel();
+  }, [label]);
+
   return (
     <div className="item-container">
       <div className="item-content-header">
@@ -43,10 +54,8 @@ const QuestionItem = ({ item }) => {
           </p>
         </div>
         <SubjectBadge
-          isExactScience={item.subject === 1 ? true : false}
-          label={
-            item.subject === 1 ? "Exatas" : "Humanas" ? "Biológicas" : "null"
-          }
+          item={item}
+          label={label}
         />
       </div>
     </div>
