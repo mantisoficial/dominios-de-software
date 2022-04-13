@@ -22,7 +22,7 @@ Primeiramente é preciso fazer o download das seguintes ferramentas:
 Criar um banco de dados local. Para isso abra o SQL Server Management Studio, coloque o nome do seu servidor e clique em conectar como mostra a imagem abaixo.
 ![passo2-img](https://user-images.githubusercontent.com/54213043/163080993-eae0dcb9-b15c-4548-8cbf-21091362dfe0.png)
 
-Caso esteja em dúvida sobre qual é o nome do seu servidor, abra o cmd e digite "sqllocalDB info". Vão aparecer todos os banco de dados locais de sua máquina. Na hora de colocar esse nome no  SQL Server Management Studio, use "(LocalDb\)"como prefixo. Por exemplo, se no cmd o nome da base for "MSSQLLocalBD" então na hora de colocar o nome no SSMS, ponha "(LocalDb)\MSSQLLocalBD".
+Caso esteja em dúvida sobre qual é o nome do seu servidor, abra o cmd e digite "sqllocalDB info". Vão aparecer todos os banco de dados locais de sua máquina. Na hora de colocar esse nome no  SQL Server Management Studio, use "(LocalDb\)"como prefixo. Por exemplo, se no cmd o nome da base for "MSSQLLocalBD" então no momento de colocar o nome no SSMS, ponha "(LocalDb)\MSSQLLocalBD".
 
 ### 3º Passo
 Clonar o repositório no Visual Studio Community
