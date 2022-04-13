@@ -43,9 +43,9 @@ const QuestionItem = ({ item }) => {
           </p>
         </div>
         <SubjectBadge
-          isExactScience={item.subject === 0 ? true : false}
+          isExactScience={item.subject === 1 ? true : false}
           label={
-            item.subject === 0 ? "Exatas" : "Humanas" ? "Biológicas" : "null"
+            item.subject === 1 ? "Exatas" : "Humanas" ? "Biológicas" : "null"
           }
         />
       </div>
