@@ -12,9 +12,13 @@ Preparamos o seguinte passo-a-passo para você seguir se quiser testar o o siste
 ### 1º Passo
 Primeiramente é preciso fazer o download das seguintes ferramentas: 
 - Visual Studio Code - https://code.visualstudio.com/download
-- Visual Studio Community - https://visualstudio.microsoft.com/pt-br/vs/community/
+- Visual Studio Community - https://visualstudio.microsoft.com/pt-br/vs/community/ 
+![pass1-img](https://user-images.githubusercontent.com/54213043/163079739-8f6a4539-8741-42e8-ae71-da3942d21970.jpg)
 - SQL Server Management Studio - https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
 
+### 2º Passo
+Clonar o repositório no Visual Studio Community
+![passo2-img](https://user-images.githubusercontent.com/54213043/163079616-98a0bf66-1666-4f87-b4de-5c8dd0c6f942.png)
 
 ## Banco de dados - TODO
 https://dev.to/alexeagleson/how-to-connect-a-react-app-to-a-notion-database-51mc
