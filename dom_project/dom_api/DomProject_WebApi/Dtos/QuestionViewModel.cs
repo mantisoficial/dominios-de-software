@@ -14,9 +14,9 @@ namespace DomProject_WebApi.Dtos
 
     public enum Subject
     {
-        Stem = 0,
-        HumanSciences = 1,
-        Biologics = 2,
+        Stem = 1,
+        HumanSciences = 2,
+        Biologics = 3,
     }
 }
 
