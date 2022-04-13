@@ -3,6 +3,8 @@ import "./Dialog.css";
 import Button from "./Button";
 import InputField from "./InputField";
 import Service from "../api/Service";
+import { similarity } from "../helpers/levenshtein";
+
 const Dialog = ({ isOpen, onCancel, onSuccessCallback, existingQuestions }) => {
   //#region UseState and Variables
   const [newQuestion, setNewQuestion] = useState({
@@ -53,7 +55,6 @@ const Dialog = ({ isOpen, onCancel, onSuccessCallback, existingQuestions }) => {
   //#region Handles
   const handleInputChange = (e) => {
     setNewQuestion({ ...newQuestion, [e.target.name]: e.target.value });
-    console.log(newQuestion);
   };
 
   const handleAnswerInputChange = (index, e, isCheckbox) => {
@@ -101,14 +102,13 @@ const Dialog = ({ isOpen, onCancel, onSuccessCallback, existingQuestions }) => {
         subjectType: "Biológicas",
       });
     }
-    console.log(newQuestion);
   };
 
   const handleValidation = () => {
     var isValid = true;
 
     existingQuestions.map((item) => {
-      if (newQuestion.text === item.text) {
+      if (similarity(newQuestion.text, item.text) > 0.6) {
         isValid = false;
         setErrorMessage("Questões iguais não são permitidas");
         return isValid;
